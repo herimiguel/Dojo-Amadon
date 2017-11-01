@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>THANK YOU FOR YOR BUSINESS!</h1>
+    <h3>We charged your credit card for ${{request.session.new_price}}</h3>
+    <h3>You have ordered:{{request.session.total_quantity}} so far and spent {{request.session.total_cost}} with Amadon.com!</h3>
+<a href="/">GO BACK</a>
+<form action="/reset" method="post">
+      {% csrf_token %}
+      <input type="submit" value="RESET">
+    </form>
+
+</body>
+</html>
